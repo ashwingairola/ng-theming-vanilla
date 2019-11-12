@@ -1,0 +1,18 @@
+@import '../common/colors';
+@import './theme-engine';
+
+$color-primary: $color-pink;
+$color-secondary: $color-indigo;
+$color-background: $color-white;
+$color-background-secondary: $color-white;
+$color-text: $color-black;
+
+*[data-theme='theme-sexy'] {
+  @include theme-engine(
+    $color-primary,
+    $color-secondary,
+    $color-background,
+    $color-background-secondary,
+    $color-text
+  );
+}

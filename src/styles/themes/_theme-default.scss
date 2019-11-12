@@ -7,7 +7,7 @@ $color-background: $color-grey-900;
 $color-background-secondary: $color-grey-800;
 $color-text: $color-white;
 
-.theme-default {
+*[data-theme='theme-default'] {
   @include theme-engine(
     $color-primary,
     $color-secondary,

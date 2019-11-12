@@ -1,0 +1,20 @@
+@mixin theme-engine($primary, $accent, $background, $background-accent, $text) {
+  color: $text;
+  background-color: $background;
+
+  *.app-primary {
+    background-color: $primary;
+  }
+
+  *.app-accent {
+    background-color: $accent;
+  }
+
+  *.app-bg {
+    background-color: $background;
+  }
+
+  *.app-bg-accent {
+    background-color: $background-accent;
+  }
+}

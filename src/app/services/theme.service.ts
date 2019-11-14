@@ -8,14 +8,19 @@ import { LOCAL_STORAGE } from '../providers/localstorage.provider';
 export class ThemeService {
   constructor(
     @Inject(DOCUMENT) private document: Document,
-    @Inject(LOCAL_STORAGE) localStorage: Storage
+    @Inject(LOCAL_STORAGE) private localStorage: Storage
   ) {}
+
+  initTheme() {
+    const theme = this.localStorage.getItem('theme');
+    this.document.body.dataset.theme = theme || 'theme-default';
+  }
 
   changeTheme(theme: string) {
     const body = this.document.body;
 
     body.dataset.theme = theme;
 
-    console.log(localStorage);
+    this.localStorage.setItem('theme', theme);
   }
 }

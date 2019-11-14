@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { ThemeService } from './services/theme.service';
 
 @Component({
@@ -11,7 +11,5 @@ export class AppComponent implements OnInit {
 
   constructor(private themeSvc: ThemeService) {}
 
-  ngOnInit() {
-    // this.themeSvc.showAppRef();
-  }
+  ngOnInit() {}
 }

@@ -1,16 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, PLATFORM_ID } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import {
+  LOCAL_STORAGE,
+  getLocalStorage
+} from './providers/localstorage.provider';
 
 @NgModule({
-  declarations: [
-    AppComponent
+  declarations: [AppComponent],
+  imports: [BrowserModule],
+  providers: [
+    { provide: LOCAL_STORAGE, useFactory: getLocalStorage, deps: [PLATFORM_ID] }
   ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
